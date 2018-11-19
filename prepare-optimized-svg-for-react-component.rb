@@ -10,6 +10,44 @@ end
 SOURCE_SVG = ARGV[0]
 TARGET_JS = ARGV[1]
 
+ITALIAN_BLACK_KEYS = [
+  'leftCapitalF',
+  'leftCapitalZ',
+  'leftCapitalN',
+  'leftCapitalX',
+  'eRightLowercase',
+  'nRightLowercase',
+  'zRightLowercase',
+  'fRightLowercase',
+]
+
+ITALIAN_WHITE_KEYS = [
+  'leftCapitalS',
+  'leftCapitalC',
+  'leftCapitalP',
+  'leftCapitalR',
+  'leftCapitalI',
+  'leftCapitalU',
+  'uRightLowercase',
+  'iRightLowercase',
+  'aRightLowercase',
+  'pRightLowercase',
+  'cRightLowercase',
+  'sRightLowercase',
+]
+
+italian_color_config = {}
+
+ITALIAN_WHITE_KEYS.each do | key |
+  italian_color_config["#{key}OnColor"] = "#FFFFFF"
+  italian_color_config["#{key}OffColor"] = "#E9D9F2"
+end
+
+ITALIAN_BLACK_KEYS.each do | key |
+  italian_color_config["#{key}OnColor"] = "#7109AA"
+  italian_color_config["#{key}OffColor"] = "#E9D9F2"
+end
+
 @doc = File.open(SOURCE_SVG) { |f| Nokogiri::XML(f) }
 
 svg = @doc.at_css "svg"
@@ -29,6 +67,9 @@ g["id"] = "xxxstenoboard-xxx + this.props.brief xxx}"
 # end
 
 vars = {}
+
+# STENO KEYS
+# `<rect id="rightDLower" stroke={strokeColor} fill={this.props.rightDLower ? rightDLowerOnColor : rightDLowerOffColor} x="195" y="48" width="18" height="23" rx="4"/>`
 rects = @doc.css "rect"
 rects.each do | rect |
   rect_id = rect["id"]
@@ -46,9 +87,12 @@ rects.each do | rect |
   fill_var_name_off = rect_id + "OffColor"
   fill_var_value = fill
   rect["fill"] = "xxx{this.props." + rect_id + " ? " + fill_var_name_on + " : " + fill_var_name_off + "xxx}"
-  vars.store(fill_var_name_on, fill_var_value)
-  vars.store(fill_var_name_off, fill_var_value)
+  vars.store(fill_var_name_on, italian_color_config[fill_var_name_on])
+  vars.store(fill_var_name_off, italian_color_config[fill_var_name_off])
 end
+
+# STENO LETTERS
+# <path d="M195 34.2V23h2.816c3.744 0 5.152 2.816 5.152 5.6 0 2.56-1.28 5.6-5.216 5.6H195zm1.904-1.792h1.04c2.288 0 3.04-2.032 3.04-3.808 0-1.888-.832-3.808-2.864-3.808h-1.216v7.616z" id="DUpper" fill={this.props.leftDUpper ? onTextColor : offTextColor}/>
 paths = @doc.css "path"
 paths.each do | path |
   path_id = path["id"]
