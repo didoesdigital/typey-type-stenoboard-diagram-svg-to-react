@@ -97,7 +97,7 @@ svg["width"] = SVG_WIDTH
 
 title = @doc.at_css "title"
 # title_content = title.content
-title.remove
+title.remove unless title == nil
 
 # if title.content == "italian-steno" then
 g = @doc.at_css "g"
