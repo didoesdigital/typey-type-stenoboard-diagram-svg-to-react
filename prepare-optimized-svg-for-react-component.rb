@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 
+# require 'pry'
 require 'fileutils'
 require 'nokogiri'
+
 if ARGV.size < 2
   $stderr.puts "Usage: ruby ./prepare-optimized-svg-for-react-component.rb STENO_LAYOUT.svg STENOLAYOUTStenoDiagram.js"
   exit 1
@@ -87,14 +89,13 @@ end
 @doc = File.open(SOURCE_SVG) { |f| Nokogiri::XML(f) }
 
 svg = @doc.at_css "svg"
-# svg["aria-hidden"] = "xxxhiddenxxx"
 svg["width"] = 140
 
 title = @doc.at_css "title"
-title_content = title.content
+# title_content = title.content
 title.remove
 
-# if title.contents == "italian-steno" then
+# if title.content == "italian-steno" then
 g = @doc.at_css "g"
 g_id = g["id"]
 # Use this to offset Danish diagram and others by 1 pixel
@@ -105,55 +106,48 @@ g["id"] = "xxxstenoboard-xxx + this.props.brief xxx}"
 vars = {}
 
 # STENO KEYS
-# `<rect id="rightDLower" stroke={strokeColor} fill={this.props.rightDLower ? rightDLowerOnColor : rightDLowerOffColor} x="195" y="48" width="18" height="23" rx="4"/>`
 rects = @doc.css "rect"
 rects.each do | rect |
   rect_id = rect["id"]
 
-  # strokes
+  # steno key strokes
   stroke = rect["stroke"]
   stroke_var_name = rect_id + "StrokeColor"
   stroke_var_value = stroke
   rect["stroke"] = "xxx{" + stroke_var_name + "xxx}"
   vars.store(stroke_var_name, stroke_var_value)
 
-  # fills
+  # steno key fills
   key_fill = rect["fill"]
   key_fill_var_name_on = rect_id + "OnColor"
   key_fill_var_name_off = rect_id + "OffColor"
   key_fill_var_value = key_fill
   rect["fill"] = "xxx{this.props." + rect_id + " ? " + key_fill_var_name_on + " : " + key_fill_var_name_off + "xxx}"
-  # if rect_id.include?('CapitalP') then binding.pry end
   vars.store(key_fill_var_name_on, italian_color_config[key_fill_var_name_on])
   vars.store(key_fill_var_name_off, italian_color_config[key_fill_var_name_off])
 end
 
+
+
 # STENO LETTERS
-# <path d="M195 34.2V23h2.816c3.744 0 5.152 2.816 5.152 5.6 0 2.56-1.28 5.6-5.216 5.6H195zm1.904-1.792h1.04c2.288 0 3.04-2.032 3.04-3.808 0-1.888-.832-3.808-2.864-3.808h-1.216v7.616z" id="DUpper" fill={this.props.leftDUpper ? onTextColor : offTextColor}/>
 paths = @doc.css "path"
 paths.each do | path |
   path_id = path["id"]
 
-  # fills
+  # steno letter fills
   letter_fill = path["fill"]
   letter_fill_var_name_on = path_id + "OnColor"
   letter_fill_var_name_off = path_id + "OffColor"
   letter_fill_var_value = letter_fill
-  # if path_id.include?('CapitalP') then binding.pry end
   path["fill"] = "xxx{this.props." + path_id.gsub('Letter','') + " ? " + letter_fill_var_name_on + " : " + letter_fill_var_name_off + "xxx}"
   vars.store(letter_fill_var_name_on, italian_color_config[letter_fill_var_name_on])
   vars.store(letter_fill_var_name_off, italian_color_config[letter_fill_var_name_off])
 end
 
-
-# puts @doc.to_html
 File.open(TARGET_JS, 'w:utf-8') do |target|
   target.puts @doc.to_html
 end
 
-# system './svg-to-jsx'
-# system 'svg-to-jsx', 'TARGET_JS'
-# system 'yarn', 'run', 'svg-to-jsx', 'TARGET_JS'
 jsx = `yarn run svg-to-jsx #{TARGET_JS}`
 
 puts jsx
@@ -214,3 +208,4 @@ File.open('teft.js', 'w:utf-8') do |target|
 
   end
 end
+
