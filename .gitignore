@@ -104,6 +104,10 @@ Thumbs.db
 .sass-cache
 
 
+# Ignore Node modules
+/node_modules
+
+
 # Ignore tempfiles
 /tmp
 
