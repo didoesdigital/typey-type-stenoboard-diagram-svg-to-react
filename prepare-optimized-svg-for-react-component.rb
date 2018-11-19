@@ -30,11 +30,22 @@ vars = {}
 rects = @doc.css "rect"
 rects.each do | rect |
   id = rect["id"]
+
+  # strokes
   stroke = rect["stroke"]
   stroke_var_name = id + "StrokeColor"
   stroke_var_value = stroke
   rect["stroke"] = "xxx{" + stroke_var_name + "xxx}"
   vars.store(stroke_var_name, stroke_var_value)
+
+  # fills
+  fill = rect["fill"]
+  fill_var_name_on = id + "OnColor"
+  fill_var_name_off = id + "OffColor"
+  fill_var_value = fill
+  rect["fill"] = "xxx{this.props." + id + " ? " + fill_var_name_on + " : " + fill_var_name_off + "xxx}"
+  vars.store(fill_var_name_on, fill_var_value)
+  vars.store(fill_var_name_off, fill_var_value)
 end
 File.open(TARGET_JS, 'w:utf-8') do |target|
   target.puts @doc.to_html
