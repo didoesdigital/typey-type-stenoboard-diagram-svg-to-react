@@ -36,6 +36,32 @@ ITALIAN_WHITE_KEYS = [
   'sRightLowercase',
 ]
 
+ITALIAN_BLACK_KEYS_LETTERS = [
+  'leftCapitalFLetter',
+  'leftCapitalZLetter',
+  'leftCapitalNLetter',
+  'leftCapitalXLetter',
+  'eRightLowercaseLetter',
+  'nRightLowercaseLetter',
+  'zRightLowercaseLetter',
+  'fRightLowercaseLetter',
+]
+
+ITALIAN_WHITE_KEYS_LETTERS = [
+  'leftCapitalSLetter',
+  'leftCapitalCLetter',
+  'leftCapitalPLetter',
+  'leftCapitalRLetter',
+  'leftCapitalILetter',
+  'leftCapitalULetter',
+  'uRightLowercaseLetter',
+  'iRightLowercaseLetter',
+  'aRightLowercaseLetter',
+  'pRightLowercaseLetter',
+  'cRightLowercaseLetter',
+  'sRightLowercaseLetter',
+]
+
 italian_color_config = {}
 
 ITALIAN_WHITE_KEYS.each do | key |
@@ -46,6 +72,16 @@ end
 ITALIAN_BLACK_KEYS.each do | key |
   italian_color_config["#{key}OnColor"] = "#7109AA"
   italian_color_config["#{key}OffColor"] = "#E9D9F2"
+end
+
+ITALIAN_WHITE_KEYS_LETTERS.each do | key |
+  italian_color_config["#{key}OnColor"] = "#7109AA"
+  italian_color_config["#{key}OffColor"] = "#FFFFFF"
+end
+
+ITALIAN_BLACK_KEYS_LETTERS.each do | key |
+  italian_color_config["#{key}OnColor"] = "#FFFFFF"
+  italian_color_config["#{key}OffColor"] = "#FFFFFF"
 end
 
 @doc = File.open(SOURCE_SVG) { |f| Nokogiri::XML(f) }
@@ -82,13 +118,14 @@ rects.each do | rect |
   vars.store(stroke_var_name, stroke_var_value)
 
   # fills
-  fill = rect["fill"]
-  fill_var_name_on = rect_id + "OnColor"
-  fill_var_name_off = rect_id + "OffColor"
-  fill_var_value = fill
-  rect["fill"] = "xxx{this.props." + rect_id + " ? " + fill_var_name_on + " : " + fill_var_name_off + "xxx}"
-  vars.store(fill_var_name_on, italian_color_config[fill_var_name_on])
-  vars.store(fill_var_name_off, italian_color_config[fill_var_name_off])
+  key_fill = rect["fill"]
+  key_fill_var_name_on = rect_id + "OnColor"
+  key_fill_var_name_off = rect_id + "OffColor"
+  key_fill_var_value = key_fill
+  rect["fill"] = "xxx{this.props." + rect_id + " ? " + key_fill_var_name_on + " : " + key_fill_var_name_off + "xxx}"
+  # if rect_id.include?('CapitalP') then binding.pry end
+  vars.store(key_fill_var_name_on, italian_color_config[key_fill_var_name_on])
+  vars.store(key_fill_var_name_off, italian_color_config[key_fill_var_name_off])
 end
 
 # STENO LETTERS
@@ -98,20 +135,28 @@ paths.each do | path |
   path_id = path["id"]
 
   # fills
-  fill = path["fill"]
-  fill_var_name_on = path_id + "OnTextColor"
-  fill_var_name_off = path_id + "OffTextColor"
-  fill_var_value = fill
-  path["fill"] = "xxx{this.props." + path_id + " ? " + fill_var_name_on + " : " + fill_var_name_off + "xxx}"
-  vars.store(fill_var_name_on, fill_var_value)
-  vars.store(fill_var_name_off, fill_var_value)
+  letter_fill = path["fill"]
+  letter_fill_var_name_on = path_id + "OnColor"
+  letter_fill_var_name_off = path_id + "OffColor"
+  letter_fill_var_value = letter_fill
+  # if path_id.include?('CapitalP') then binding.pry end
+  path["fill"] = "xxx{this.props." + path_id.gsub('Letter','') + " ? " + letter_fill_var_name_on + " : " + letter_fill_var_name_off + "xxx}"
+  vars.store(letter_fill_var_name_on, italian_color_config[letter_fill_var_name_on])
+  vars.store(letter_fill_var_name_off, italian_color_config[letter_fill_var_name_off])
 end
 
+
+# puts @doc.to_html
 File.open(TARGET_JS, 'w:utf-8') do |target|
   target.puts @doc.to_html
 end
+
+# system './svg-to-jsx'
+# system 'svg-to-jsx', 'TARGET_JS'
+# system 'yarn', 'run', 'svg-to-jsx', 'TARGET_JS'
 jsx = `yarn run svg-to-jsx #{TARGET_JS}`
 
+puts jsx
 File.open(TARGET_JS, 'w:utf-8') do |target|
 
   jsx.each_line do |raw_line|
