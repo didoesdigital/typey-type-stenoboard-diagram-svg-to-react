@@ -154,52 +154,46 @@ end
 
 jsx = `node_modules/.bin/svg-to-jsx #{TARGET_JS}`
 
-File.open(TARGET_JS, 'w:utf-8') do |target|
+svgjs = ""
 
-  jsx.each_line do |raw_line|
-    line = raw_line.rstrip
-    if line =~ /<svg (.+)>/i
-      line = "<svg " + $1 + " aria-hidden={hidden}>"
-    end
-    line = line.gsub(/"xxx{/,"{")
-    line = line.gsub(/xxx}"/,"}")
-    line = line.gsub(/"xxxstenoboard-xxx/,'{"stenoboard-"')
-    line = line.gsub(/	/,"  ")
-    line = "      " + line
-    target.puts line
+jsx.each_line do |raw_line|
+  line = raw_line.rstrip
+  if line =~ /<svg (.+)>/i
+    line = "<svg " + $1 + " aria-hidden={hidden}>"
   end
-
+  line = line.gsub(/"xxx{/,"{")
+  line = line.gsub(/xxx}"/,"}")
+  line = line.gsub(/"xxxstenoboard-xxx/,'{"stenoboard-"')
+  line = line.gsub(/	/,"  ")
+  line = "      " + line
+  svgjs += line + "\n"
 end
 
-File.open('teft.js', 'w:utf-8') do |target|
-  File.open(TARGET_JS, 'r:utf-8') do |reeead|
 
-    target.puts "import React, { Component } from 'react';"
-    target.puts ""
-    target.puts "class " + File.basename(TARGET_JS, ".js") + " extends Component {"
-    target.puts "  render() {"
-    target.puts ""
-    target.puts "    let hidden = true;"
+File.open(TARGET_JS, 'w') do |target|
 
-    vars.each do |key, value|
-      target.puts "    let " + key + " = '" + value + "';"
-    end
+  target.puts "import React, { Component } from 'react';"
+  target.puts
+  target.puts "class " + File.basename(TARGET_JS, ".js") + " extends Component {"
+  target.puts "  render() {"
+  target.puts
+  target.puts "    let hidden = true;"
 
-    target.puts ""
-
-    target.puts "    return ("
-
-    reeead.each_line do |raw_line|
-      line = raw_line.rstrip
-      target.puts raw_line
-    end
-
-    target.puts "    );"
-    target.puts "  }"
-    target.puts "}"
-    target.puts ""
-    target.puts "export default " + File.basename(TARGET_JS, ".js") + ";"
-
+  vars.each do |key, value|
+    target.puts "    let " + key + " = '" + value + "';"
   end
+
+  target.puts
+
+  target.puts "    return ("
+
+  target.puts svgjs
+
+  target.puts "    );"
+  target.puts "  }"
+  target.puts "}"
+  target.puts
+  target.puts "export default " + File.basename(TARGET_JS, ".js") + ";"
+
 end
 
