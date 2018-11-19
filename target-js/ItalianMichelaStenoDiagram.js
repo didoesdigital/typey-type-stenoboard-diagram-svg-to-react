@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 258 99" aria-hidden="hidden" width="140">
   
-  <g id="italian-michela" fill="none" fill-rule="evenodd">
+  <g id="italian-michela" fill="none" fill-rule="evenodd" transform="translate(1 1)">
     <rect id="sRightLowercaseWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="237" y="2" width="20" height="96" rx="2"></rect>
     <rect id="cRightLowercaseWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="217" y="2" width="20" height="96" rx="2"></rect>
     <rect id="pRightLowercaseWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="197" y="2" width="20" height="96" rx="2"></rect>

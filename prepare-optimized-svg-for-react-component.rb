@@ -17,8 +17,13 @@ svg["aria-hidden"] = "hidden"
 svg["width"] = 140
 
 title = @doc.at_css "title"
+title_contents = title.contents
 title.remove
 
+# if title.contents == "italian-steno" then
+g = @doc.at_css "g"
+g["transform"] = "translate(1 1)"
+# end
 File.open(TARGET_JS, 'w:utf-8') do |target|
   target.puts @doc.to_html
 end
