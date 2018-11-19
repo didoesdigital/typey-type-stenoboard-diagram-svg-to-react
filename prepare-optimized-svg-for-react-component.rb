@@ -13,7 +13,7 @@ TARGET_JS = ARGV[1]
 @doc = File.open(SOURCE_SVG) { |f| Nokogiri::XML(f) }
 
 svg = @doc.at_css "svg"
-svg["aria-hidden"] = "hidden"
+# svg["aria-hidden"] = "xxxhiddenxxx"
 svg["width"] = 140
 
 title = @doc.at_css "title"
@@ -71,6 +71,9 @@ File.open(TARGET_JS, 'w:utf-8') do |target|
 
   jsx.each_line do |raw_line|
     line = raw_line.rstrip
+    if line =~ /<svg (.+)>/i
+      line = "<svg " + $1 + " aria-hidden={hidden}>"
+    end
     line = line.gsub(/"xxx{/,"{")
     line = line.gsub(/xxx}"/,"}")
     line = line.gsub(/"xxxstenoboard-xxx/,'{"stenoboard-"')
