@@ -152,7 +152,7 @@ File.open(TARGET_JS, 'w:utf-8') do |target|
   target.puts @doc.to_html
 end
 
-jsx = `yarn run svg-to-jsx #{TARGET_JS}`
+jsx = `node_modules/.bin/svg-to-jsx #{TARGET_JS}`
 
 File.open(TARGET_JS, 'w:utf-8') do |target|
 
@@ -170,15 +170,6 @@ File.open(TARGET_JS, 'w:utf-8') do |target|
   end
 
 end
-
-remove_first_line = `sed -i '' '1d' #{TARGET_JS}`
-# yarn run v1.9.4
-
-remove_second_line = `sed -i '' '1d' #{TARGET_JS}`
-# $ svg-to-jsx target-js/ItalianMichelaStenoDiagram.js
-
-remove_last_line = `sed -i '' -e '$ d' #{TARGET_JS}`
-# Done in 0.31s.
 
 File.open('teft.js', 'w:utf-8') do |target|
   File.open(TARGET_JS, 'r:utf-8') do |reeead|
