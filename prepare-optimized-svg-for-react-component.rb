@@ -75,6 +75,7 @@ File.open(TARGET_JS, 'w:utf-8') do |target|
     line = line.gsub(/xxx}"/,"}")
     line = line.gsub(/"xxxstenoboard-xxx/,'{"stenoboard-"')
     line = line.gsub(/	/,"  ")
+    line = "      " + line
     target.puts line
   end
 
