@@ -90,3 +90,34 @@ remove_second_line = `sed -i '' '1d' #{TARGET_JS}`
 remove_last_line = `sed -i '' -e '$ d' #{TARGET_JS}`
 # Done in 0.31s.
 
+File.open('teft.js', 'w:utf-8') do |target|
+  File.open(TARGET_JS, 'r:utf-8') do |reeead|
+
+    target.puts "import React, { Component } from 'react';"
+    target.puts ""
+    target.puts "class " + File.basename(TARGET_JS, ".js") + " extends Component {"
+    target.puts "  render() {"
+    target.puts ""
+    target.puts "    let hidden = true;"
+
+    vars.each do |key, value|
+      target.puts "    let " + key + " = '" + value + "';"
+    end
+
+    target.puts ""
+
+    target.puts "    return ("
+
+    reeead.each_line do |raw_line|
+      line = raw_line.rstrip
+      target.puts raw_line
+    end
+
+    target.puts "    );"
+    target.puts "  }"
+    target.puts "}"
+    target.puts ""
+    target.puts "export default " + File.basename(TARGET_JS, ".js") + ";"
+
+  end
+end
