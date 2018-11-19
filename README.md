@@ -60,6 +60,8 @@ $ ./prepare-optimized-svg-for-react-component.rb source-svgs/italian-michela.svg
 
 # TODO
 
-- [ ] abstract Italian to work for any language
+- [ ] abstract Italian to work for any language:
+    - [ ] duplicate script for Korean, make it work for that, see what is in common, then combine
+    - [ ] generalise config to live in a JSON file
 - [ ] add command line svgo with given set of arguments instead of using web UI
 
