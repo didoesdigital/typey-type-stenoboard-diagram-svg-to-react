@@ -1,26 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 258 99" aria-hidden="hidden" width="140">
   
   <g id="italian-michela" fill="none" fill-rule="evenodd" transform="translate(1 1)">
-    <rect id="sRightLowercaseWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="237" y="2" width="20" height="96" rx="2"></rect>
-    <rect id="cRightLowercaseWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="217" y="2" width="20" height="96" rx="2"></rect>
-    <rect id="pRightLowercaseWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="197" y="2" width="20" height="96" rx="2"></rect>
-    <rect id="aRightLowercaseWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="177" y="2" width="20" height="96" rx="2"></rect>
-    <rect id="iRightLowercaseWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="157" y="2" width="20" height="96" rx="2"></rect>
-    <rect id="uRightLowercaseWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="137" y="2" width="20" height="96" rx="2"></rect>
-    <rect id="fRightLowercaseBlackKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="247" y="2" width="10" height="72" rx="2"></rect>
-    <rect id="zRightLowercaseBlackKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="213" y="2" width="10" height="60" rx="2"></rect>
-    <rect id="nRightLowercaseBlackKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="193" y="2" width="10" height="60" rx="2"></rect>
-    <rect id="eRightLowercaseBlackKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="173" y="2" width="10" height="60" rx="2"></rect>
-    <rect id="leftCapitalUWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="101" y="2" width="20" height="96" rx="2"></rect>
-    <rect id="leftCapitalIWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="81" y="2" width="20" height="96" rx="2"></rect>
-    <rect id="leftCapitalRWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="61" y="2" width="20" height="96" rx="2"></rect>
-    <rect id="leftCapitalPWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="41" y="2" width="20" height="96" rx="2"></rect>
-    <rect id="leftCapitalCWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="21" y="2" width="20" height="96" rx="2"></rect>
-    <rect id="leftCapitalSWhiteKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="1" y="2" width="20" height="96" rx="2"></rect>
-    <rect id="leftCapitalXBlackKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="75" y="2" width="10" height="60" rx="2"></rect>
-    <rect id="leftCapitalNBlackKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="55" y="2" width="10" height="60" rx="2"></rect>
-    <rect id="leftCapitalZBlackKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="35" y="2" width="10" height="60" rx="2"></rect>
-    <rect id="leftCapitalFBlackKey" stroke="#7109AA" fill="#E9D9F2" fill-rule="nonzero" x="1" y="2" width="10" height="72" rx="2"></rect>
+    <rect id="sRightLowercaseWhiteKey" stroke="sRightLowercaseWhiteKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="237" y="2" width="20" height="96" rx="2"></rect>
+    <rect id="cRightLowercaseWhiteKey" stroke="cRightLowercaseWhiteKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="217" y="2" width="20" height="96" rx="2"></rect>
+    <rect id="pRightLowercaseWhiteKey" stroke="pRightLowercaseWhiteKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="197" y="2" width="20" height="96" rx="2"></rect>
+    <rect id="aRightLowercaseWhiteKey" stroke="aRightLowercaseWhiteKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="177" y="2" width="20" height="96" rx="2"></rect>
+    <rect id="iRightLowercaseWhiteKey" stroke="iRightLowercaseWhiteKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="157" y="2" width="20" height="96" rx="2"></rect>
+    <rect id="uRightLowercaseWhiteKey" stroke="uRightLowercaseWhiteKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="137" y="2" width="20" height="96" rx="2"></rect>
+    <rect id="fRightLowercaseBlackKey" stroke="fRightLowercaseBlackKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="247" y="2" width="10" height="72" rx="2"></rect>
+    <rect id="zRightLowercaseBlackKey" stroke="zRightLowercaseBlackKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="213" y="2" width="10" height="60" rx="2"></rect>
+    <rect id="nRightLowercaseBlackKey" stroke="nRightLowercaseBlackKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="193" y="2" width="10" height="60" rx="2"></rect>
+    <rect id="eRightLowercaseBlackKey" stroke="eRightLowercaseBlackKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="173" y="2" width="10" height="60" rx="2"></rect>
+    <rect id="leftCapitalUWhiteKey" stroke="leftCapitalUWhiteKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="101" y="2" width="20" height="96" rx="2"></rect>
+    <rect id="leftCapitalIWhiteKey" stroke="leftCapitalIWhiteKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="81" y="2" width="20" height="96" rx="2"></rect>
+    <rect id="leftCapitalRWhiteKey" stroke="leftCapitalRWhiteKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="61" y="2" width="20" height="96" rx="2"></rect>
+    <rect id="leftCapitalPWhiteKey" stroke="leftCapitalPWhiteKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="41" y="2" width="20" height="96" rx="2"></rect>
+    <rect id="leftCapitalCWhiteKey" stroke="leftCapitalCWhiteKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="21" y="2" width="20" height="96" rx="2"></rect>
+    <rect id="leftCapitalSWhiteKey" stroke="leftCapitalSWhiteKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="1" y="2" width="20" height="96" rx="2"></rect>
+    <rect id="leftCapitalXBlackKey" stroke="leftCapitalXBlackKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="75" y="2" width="10" height="60" rx="2"></rect>
+    <rect id="leftCapitalNBlackKey" stroke="leftCapitalNBlackKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="55" y="2" width="10" height="60" rx="2"></rect>
+    <rect id="leftCapitalZBlackKey" stroke="leftCapitalZBlackKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="35" y="2" width="10" height="60" rx="2"></rect>
+    <rect id="leftCapitalFBlackKey" stroke="leftCapitalFBlackKeyStrokeColor" fill="#E9D9F2" fill-rule="nonzero" x="1" y="2" width="10" height="72" rx="2"></rect>
     <path d="M253.864 48.24c-.394669 0-.719999.0693326-.976.208-.256001.1386674-.384.341332-.384.608v.768h2.752v1.616h-2.752v4.944h2.176V58h-5.776v-1.616h1.76V51.44h-1.76v-1.616h1.76v-1.12c0-.7680038.274664-1.3093318.824-1.624.549336-.3146682 1.207996-.472 1.976-.472.778671 0 1.429331.133332 1.952.4v1.52c-.458669-.192001-.975997-.288-1.552-.288z" id="fRightLowercase" fill="#FFF"></path>
     <path d="M246.976 93.192c-.693337 0-1.33333-.1306654-1.92-.392-.58667-.2613346-1.055998-.6159978-1.408-1.064l1.2-1.088c.672003.6506699 1.413329.976 2.224.976.394669 0 .719999-.0693326.976-.208.256001-.1386674.384-.3466653.384-.624 0-.1600008-.077333-.3119993-.232-.456-.154667-.1440007-.333332-.2639995-.536-.36-.202668-.0960005-.501331-.2239992-.896-.384-.042667-.0213334-.077333-.0373333-.104-.048-.026667-.0106667-.061333-.0239999-.104-.04s-.08-.0293333-.112-.04c-.394669-.1706675-.687999-.3013329-.88-.392-.192001-.0906671-.423999-.2186658-.696-.384-.272001-.1653342-.469333-.3226659-.592-.472-.122667-.1493341-.232-.3386655-.328-.568-.096-.2293345-.144-.4879986-.144-.776 0-.6933368.298664-1.239998.896-1.64.597336-.400002 1.349329-.6 2.256-.6 1.26934 0 2.287996.4319957 3.056 1.296l-1.232 1.008c-.58667-.4906691-1.215997-.736-1.888-.736-.416002 0-.749332.0613327-1 .184s-.376.2959989-.376.52c0 .1066672.042666.2106662.128.312s.234666.2079994.448.32.389333.197333.528.256c.138667.058667.373332.1519994.704.28.981338.3946686 1.631998.7146654 1.952.96.565336.4480022.853333 1.0293298.864 1.744 0 .7573371-.28533 1.3493312-.856 1.776-.57067.4266688-1.341328.64-2.312.64z" id="sRightLowercase" fill="#FFF"></path>
     <path d="M227.088 93.192c-1.152006 0-2.063997-.3786629-2.736-1.136-.672003-.7573371-1.008-1.80266-1.008-3.136 0-1.3226733.343997-2.3679962 1.032-3.136.688003-.7680038 1.602661-1.152 2.744-1.152 1.738675 0 2.858664.7413259 3.36 2.224l-1.744.592c-.277335-.7146702-.810663-1.072-1.6-1.072-.608003 0-1.079998.229331-1.416.688-.336002.458669-.504 1.0773294-.504 1.856 0 .7786706.167998 1.3919978.504 1.84.336002.4480022.79733.672 1.384.672.853338 0 1.413332-.399996 1.68-1.2l1.744.544c-.490669 1.6106747-1.637324 2.416-3.44 2.416z" id="cRightLowercase" fill="#FFF"></path>

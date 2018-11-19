@@ -17,13 +17,24 @@ svg["aria-hidden"] = "hidden"
 svg["width"] = 140
 
 title = @doc.at_css "title"
-title_contents = title.contents
+title_content = title.content
 title.remove
 
 # if title.contents == "italian-steno" then
 g = @doc.at_css "g"
 g["transform"] = "translate(1 1)"
 # end
+
+vars = {}
+rects = @doc.css "rect"
+rects.each do | rect |
+  id = rect["id"]
+  stroke = rect["stroke"]
+  stroke_var_name = id + "StrokeColor"
+  stroke_var_value = stroke
+  rect["stroke"] = stroke_var_name
+  vars.store(stroke_var_name, stroke_var_value)
+end
 File.open(TARGET_JS, 'w:utf-8') do |target|
   target.puts @doc.to_html
 end
