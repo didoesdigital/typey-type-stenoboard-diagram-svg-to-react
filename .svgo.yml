@@ -35,7 +35,7 @@ plugins:
   - convertColors
   - removeUnknownsAndDefaults
   - removeNonInheritableGroupAttrs
-  - removeUselessStrokeAndFill
+  - removeUselessStrokeAndFill: true
   - removeViewBox: false
   - cleanupEnableBackground
   - removeHiddenElems
@@ -44,16 +44,16 @@ plugins:
   - moveElemsAttrsToGroup
   - moveGroupAttrsToElems
   - collapseGroups: false
-  - convertPathData: false
+  - convertPathData: true
   - convertTransform
   - removeEmptyAttrs
   - removeEmptyContainers
-  - mergePaths
+  - mergePaths: false
   - removeUnusedNS
   - sortAttrs: false
   - removeTitle: false
   - removeDesc
-  - removeDimensions
+  - removeDimensions: true
   - removeAttrs
   - removeElementsByAttr
   - addClassesToSVGElement
