@@ -32,9 +32,27 @@ rects.each do | rect |
   stroke = rect["stroke"]
   stroke_var_name = id + "StrokeColor"
   stroke_var_value = stroke
-  rect["stroke"] = stroke_var_name
+  rect["stroke"] = "xxx{" + stroke_var_name + "xxx}"
   vars.store(stroke_var_name, stroke_var_value)
 end
 File.open(TARGET_JS, 'w:utf-8') do |target|
   target.puts @doc.to_html
 end
+jsx = `yarn run svg-to-jsx #{TARGET_JS}`
+
+File.open(TARGET_JS, 'w:utf-8') do |target|
+
+  jsx.each_line do |raw_line|
+    line = raw_line.rstrip
+    line = line.gsub(/"xxx{/,"{")
+    line = line.gsub(/xxx}"/,"}")
+    line = line.gsub(/	/,"  ")
+    target.puts line
+  end
+
+end
+
+remove_first_line = `sed -i '' '1d' #{TARGET_JS}`
+remove_second_line = `sed -i '' '1d' #{TARGET_JS}`
+remove_last_line = `sed -i '' -e '$ d' #{TARGET_JS}`
+
