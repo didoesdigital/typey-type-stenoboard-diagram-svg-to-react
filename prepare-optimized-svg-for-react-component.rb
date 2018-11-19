@@ -23,7 +23,8 @@ title.remove
 # if title.contents == "italian-steno" then
 g = @doc.at_css "g"
 g_id = g["id"]
-g["transform"] = "translate(1 1)"
+# Use this to offset Danish diagram and others by 1 pixel
+# g["transform"] = "translate(1 1)"
 g["id"] = "xxxstenoboard-xxx + this.props.brief xxx}"
 # end
 
