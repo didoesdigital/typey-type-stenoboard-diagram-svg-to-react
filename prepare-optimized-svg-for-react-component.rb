@@ -76,12 +76,12 @@ end
 
 ITALIAN_WHITE_KEYS_LETTERS.each do | key |
   italian_color_config["#{key}OnColor"] = "#7109AA"
-  italian_color_config["#{key}OffColor"] = "#FFFFFF"
+  italian_color_config["#{key}OffColor"] = "#E9D9F2"
 end
 
 ITALIAN_BLACK_KEYS_LETTERS.each do | key |
   italian_color_config["#{key}OnColor"] = "#FFFFFF"
-  italian_color_config["#{key}OffColor"] = "#FFFFFF"
+  italian_color_config["#{key}OffColor"] = "#E9D9F2"
 end
 
 @doc = File.open(SOURCE_SVG) { |f| Nokogiri::XML(f) }
