@@ -23,6 +23,7 @@ title.remove
 # if title.contents == "italian-steno" then
 g = @doc.at_css "g"
 g["transform"] = "translate(1 1)"
+g["id"] = "xxxstenoboard-xxx + this.props.brief xxx}"
 # end
 
 vars = {}
@@ -46,6 +47,7 @@ File.open(TARGET_JS, 'w:utf-8') do |target|
     line = raw_line.rstrip
     line = line.gsub(/"xxx{/,"{")
     line = line.gsub(/xxx}"/,"}")
+    line = line.gsub(/"xxxstenoboard-xxx/,'{"stenoboard-"')
     line = line.gsub(/	/,"  ")
     target.puts line
   end
