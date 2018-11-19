@@ -31,7 +31,7 @@ plugins:
   - removeRasterImages
   - removeUselessDefs
   - cleanupNumericValues: false
-  - cleanupListOfValues
+  - cleanupListOfValues: false
   - convertColors
   - removeUnknownsAndDefaults
   - removeNonInheritableGroupAttrs
@@ -44,7 +44,7 @@ plugins:
   - moveElemsAttrsToGroup
   - moveGroupAttrsToElems
   - collapseGroups: false
-  - convertPathData
+  - convertPathData: false
   - convertTransform
   - removeEmptyAttrs
   - removeEmptyContainers
