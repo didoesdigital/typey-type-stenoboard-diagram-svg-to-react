@@ -65,48 +65,48 @@ class ItalianMichelaStenoDiagram extends Component {
     let leftCapitalFOnColor = '#7109AA';
     let leftCapitalFOffColor = '#E9D9F2';
     let fRightLowercaseLetterOnColor = '#FFFFFF';
-    let fRightLowercaseLetterOffColor = '#FFFFFF';
+    let fRightLowercaseLetterOffColor = '#E9D9F2';
     let sRightLowercaseLetterOnColor = '#7109AA';
-    let sRightLowercaseLetterOffColor = '#FFFFFF';
+    let sRightLowercaseLetterOffColor = '#E9D9F2';
     let cRightLowercaseLetterOnColor = '#7109AA';
-    let cRightLowercaseLetterOffColor = '#FFFFFF';
+    let cRightLowercaseLetterOffColor = '#E9D9F2';
     let zRightLowercaseLetterOnColor = '#FFFFFF';
-    let zRightLowercaseLetterOffColor = '#FFFFFF';
+    let zRightLowercaseLetterOffColor = '#E9D9F2';
     let pRightLowercaseLetterOnColor = '#7109AA';
-    let pRightLowercaseLetterOffColor = '#FFFFFF';
+    let pRightLowercaseLetterOffColor = '#E9D9F2';
     let nRightLowercaseLetterOnColor = '#FFFFFF';
-    let nRightLowercaseLetterOffColor = '#FFFFFF';
+    let nRightLowercaseLetterOffColor = '#E9D9F2';
     let aRightLowercaseLetterOnColor = '#7109AA';
-    let aRightLowercaseLetterOffColor = '#FFFFFF';
+    let aRightLowercaseLetterOffColor = '#E9D9F2';
     let eRightLowercaseLetterOnColor = '#FFFFFF';
-    let eRightLowercaseLetterOffColor = '#FFFFFF';
+    let eRightLowercaseLetterOffColor = '#E9D9F2';
     let iRightLowercaseLetterOnColor = '#7109AA';
-    let iRightLowercaseLetterOffColor = '#FFFFFF';
+    let iRightLowercaseLetterOffColor = '#E9D9F2';
     let uRightLowercaseLetterOnColor = '#7109AA';
-    let uRightLowercaseLetterOffColor = '#FFFFFF';
+    let uRightLowercaseLetterOffColor = '#E9D9F2';
     let leftCapitalULetterOnColor = '#7109AA';
-    let leftCapitalULetterOffColor = '#FFFFFF';
+    let leftCapitalULetterOffColor = '#E9D9F2';
     let leftCapitalILetterOnColor = '#7109AA';
-    let leftCapitalILetterOffColor = '#FFFFFF';
+    let leftCapitalILetterOffColor = '#E9D9F2';
     let leftCapitalXLetterOnColor = '#FFFFFF';
-    let leftCapitalXLetterOffColor = '#FFFFFF';
+    let leftCapitalXLetterOffColor = '#E9D9F2';
     let leftCapitalRLetterOnColor = '#7109AA';
-    let leftCapitalRLetterOffColor = '#FFFFFF';
+    let leftCapitalRLetterOffColor = '#E9D9F2';
     let leftCapitalNLetterOnColor = '#FFFFFF';
-    let leftCapitalNLetterOffColor = '#FFFFFF';
+    let leftCapitalNLetterOffColor = '#E9D9F2';
     let leftCapitalPLetterOnColor = '#7109AA';
-    let leftCapitalPLetterOffColor = '#FFFFFF';
+    let leftCapitalPLetterOffColor = '#E9D9F2';
     let leftCapitalZLetterOnColor = '#FFFFFF';
-    let leftCapitalZLetterOffColor = '#FFFFFF';
+    let leftCapitalZLetterOffColor = '#E9D9F2';
     let leftCapitalCLetterOnColor = '#7109AA';
-    let leftCapitalCLetterOffColor = '#FFFFFF';
+    let leftCapitalCLetterOffColor = '#E9D9F2';
     let leftCapitalSLetterOnColor = '#7109AA';
-    let leftCapitalSLetterOffColor = '#FFFFFF';
+    let leftCapitalSLetterOffColor = '#E9D9F2';
     let leftCapitalFLetterOnColor = '#FFFFFF';
-    let leftCapitalFLetterOffColor = '#FFFFFF';
+    let leftCapitalFLetterOffColor = '#E9D9F2';
 
     return (
-      <svg width="140" viewBox="0 0 258 99" xmlns="http://www.w3.org/2000/svg" aria-hidden={hidden}>
+      <svg width="160" viewBox="0 0 258 99" xmlns="http://www.w3.org/2000/svg" aria-hidden={hidden}>
         <g id={"stenoboard-" + this.props.brief } fill="none" fillRule="evenodd">
           <rect height="96" id="sRightLowercase" width="20" fill={this.props.sRightLowercase ? sRightLowercaseOnColor : sRightLowercaseOffColor} fillRule="nonzero" rx="2" stroke={sRightLowercaseStrokeColor} x="237" y="2"/>
           <rect height="96" id="cRightLowercase" width="20" fill={this.props.cRightLowercase ? cRightLowercaseOnColor : cRightLowercaseOffColor} fillRule="nonzero" rx="2" stroke={cRightLowercaseStrokeColor} x="217" y="2"/>

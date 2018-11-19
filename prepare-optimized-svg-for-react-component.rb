@@ -86,10 +86,14 @@ ITALIAN_BLACK_KEYS_LETTERS.each do | key |
   italian_color_config["#{key}OffColor"] = "#E9D9F2"
 end
 
+SVG_WIDTH = 160
+
+
+
 @doc = File.open(SOURCE_SVG) { |f| Nokogiri::XML(f) }
 
 svg = @doc.at_css "svg"
-svg["width"] = 140
+svg["width"] = SVG_WIDTH
 
 title = @doc.at_css "title"
 # title_content = title.content
@@ -150,7 +154,6 @@ end
 
 jsx = `yarn run svg-to-jsx #{TARGET_JS}`
 
-puts jsx
 File.open(TARGET_JS, 'w:utf-8') do |target|
 
   jsx.each_line do |raw_line|
