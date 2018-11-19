@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "svg-to-jsx": "^1.0.0"
+    "svg-to-jsx": "^1.0.0",
+    "svgo": "^1.1.1"
   }
 }

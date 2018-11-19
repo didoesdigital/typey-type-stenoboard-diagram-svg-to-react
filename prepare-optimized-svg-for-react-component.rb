@@ -89,7 +89,11 @@ end
 SVG_WIDTH = 160
 
 
+optimized_path_target = Dir.path(TARGET_JS)
+source_svg_basename = File.basename(SOURCE_SVG)
+OPTIMIZED_SVG = optimized_path_target + source_svg_basename
 
+optimized = `node_modules/.bin/svgo --pretty --config=".svgo.yml" -o #{OPTIMIZED_SVG} #{SOURCE_SVG}`
 @doc = File.open(SOURCE_SVG) { |f| Nokogiri::XML(f) }
 
 svg = @doc.at_css "svg"
@@ -148,7 +152,7 @@ paths.each do | path |
   vars.store(letter_fill_var_name_off, italian_color_config[letter_fill_var_name_off])
 end
 
-File.open(TARGET_JS, 'w:utf-8') do |target|
+File.open(TARGET_JS, 'w') do |target|
   target.puts @doc.to_html
 end
 
