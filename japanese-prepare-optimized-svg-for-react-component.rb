@@ -29,7 +29,7 @@ end
 
 JAPANESE_SYMBOLS.each do | key |
   japanese_color_config["#{key}OnColor"] = "#FFFFFF"
-  japanese_color_config["#{key}OffColor"] = "#E9D9F2"
+  japanese_color_config["#{key}OffColor"] = "#FFFFFF"
 end
 
 # SVG_WIDTH = 160
