@@ -45,7 +45,7 @@ Add to Typey Type:
 ```
 $ gem install nokogiri
 $ yarn add svg-to-jsx
-$ chmod +x ./prepare-optimized-svg-for-react-component.rb
+$ chmod +x ./italian-michela-prepare-optimized-svg-for-react-component.rb
 ```
 
 
@@ -53,7 +53,7 @@ $ chmod +x ./prepare-optimized-svg-for-react-component.rb
 # Usage
 
 ```
-$ ./prepare-optimized-svg-for-react-component.rb source-svgs/italian-michela.svg target-js/ItalianMichelaStenoDiagram.js
+$ ./italian-michela-prepare-optimized-svg-for-react-component.rb source-svgs/italian-michela.svg target-js/ItalianMichelaStenoDiagram.js
 ```
 
 
