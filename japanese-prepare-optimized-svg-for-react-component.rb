@@ -12,81 +12,28 @@ end
 SOURCE_SVG = ARGV[0]
 TARGET_JS = ARGV[1]
 
-JAPANESE_BLACK_KEYS = [
-  'leftCapitalF',
-  'leftCapitalZ',
-  'leftCapitalN',
-  'leftCapitalX',
-  'eRightLowercase',
-  'nRightLowercase',
-  'zRightLowercase',
-  'fRightLowercase',
+JAPANESE_KEYS = [
+"the漢", "theLeftKagikakko", "theLeft4", "theLeftた", "theLeftな", "theLeft3", "theLeftか", "theLeftさ", "theLeft2", "theLeftい", "theLeftう", "theLeft1", "theLeftお", "theLeftっ", "theStar", "dash", "theRight4", "theRightた", "theRightな", "theRight3", "theRightか", "theRightさ", "theRight2", "theRightい", "theRightう", "theRight1", "theRightお", "theRightっ", "theRightKagikakko", "theカ"
 ]
 
-JAPANESE_WHITE_KEYS = [
-  'leftCapitalS',
-  'leftCapitalC',
-  'leftCapitalP',
-  'leftCapitalR',
-  'leftCapitalI',
-  'leftCapitalU',
-  'uRightLowercase',
-  'iRightLowercase',
-  'aRightLowercase',
-  'pRightLowercase',
-  'cRightLowercase',
-  'sRightLowercase',
-]
-
-JAPANESE_BLACK_KEYS_LETTERS = [
-  'leftCapitalFLetter',
-  'leftCapitalZLetter',
-  'leftCapitalNLetter',
-  'leftCapitalXLetter',
-  'eRightLowercaseLetter',
-  'nRightLowercaseLetter',
-  'zRightLowercaseLetter',
-  'fRightLowercaseLetter',
-]
-
-JAPANESE_WHITE_KEYS_LETTERS = [
-  'leftCapitalSLetter',
-  'leftCapitalCLetter',
-  'leftCapitalPLetter',
-  'leftCapitalRLetter',
-  'leftCapitalILetter',
-  'leftCapitalULetter',
-  'uRightLowercaseLetter',
-  'iRightLowercaseLetter',
-  'aRightLowercaseLetter',
-  'pRightLowercaseLetter',
-  'cRightLowercaseLetter',
-  'sRightLowercaseLetter',
+JAPANESE_SYMBOLS = [
+  "the漢Symbol", "theLeftKagikakkoSymbol", "theLeft4Symbol", "theLeftたSymbol", "theLeftなSymbol", "theLeft3Symbol", "theLeftかSymbol", "theLeftさSymbol", "theLeft2Symbol", "theLeftいSymbol", "theLeftうSymbol", "theLeft1Symbol", "theLeftおSymbol", "theLeftっSymbol", "theStarSymbol", "dashSymbol", "theRight4Symbol", "theRightたSymbol", "theRightなSymbol", "theRight3Symbol", "theRightかSymbol", "theRightさSymbol", "theRight2Symbol", "theRightいSymbol", "theRightうSymbol", "theRight1Symbol", "theRightおSymbol", "theRightっSymbol", "theRightKagikakkoSymbol", "theカSymbol"
 ]
 
 japanese_color_config = {}
 
-JAPANESE_WHITE_KEYS.each do | key |
-  japanese_color_config["#{key}OnColor"] = "#FFFFFF"
-  japanese_color_config["#{key}OffColor"] = "#E9D9F2"
-end
-
-JAPANESE_BLACK_KEYS.each do | key |
+JAPANESE_KEYS.each do | key |
   japanese_color_config["#{key}OnColor"] = "#7109AA"
   japanese_color_config["#{key}OffColor"] = "#E9D9F2"
 end
 
-JAPANESE_WHITE_KEYS_LETTERS.each do | key |
-  japanese_color_config["#{key}OnColor"] = "#7109AA"
-  japanese_color_config["#{key}OffColor"] = "#E9D9F2"
-end
-
-JAPANESE_BLACK_KEYS_LETTERS.each do | key |
+JAPANESE_SYMBOLS.each do | key |
   japanese_color_config["#{key}OnColor"] = "#FFFFFF"
   japanese_color_config["#{key}OffColor"] = "#E9D9F2"
 end
 
-SVG_WIDTH = 160
+# SVG_WIDTH = 160
+SVG_WIDTH = 202
 
 
 source_svg_basename = File.basename(SOURCE_SVG)
@@ -107,7 +54,7 @@ title.remove unless title == nil
 
 # if title.content == "japanese-steno" then
 g = @doc.at_css "g"
-g_id = g["id"]
+# g_id = g["id"]
 # Use this to offset Danish diagram and others by 1 pixel
 # g["transform"] = "translate(1 1)"
 g["id"] = "xxxstenoboard-xxx + this.props.brief xxx}"
@@ -128,10 +75,10 @@ rects.each do | rect |
   vars.store(stroke_var_name, stroke_var_value)
 
   # steno key fills
-  key_fill = rect["fill"]
+  # key_fill = rect["fill"]
   key_fill_var_name_on = rect_id + "OnColor"
   key_fill_var_name_off = rect_id + "OffColor"
-  key_fill_var_value = key_fill
+  # key_fill_var_value = key_fill
   rect["fill"] = "xxx{this.props." + rect_id + " ? " + key_fill_var_name_on + " : " + key_fill_var_name_off + "xxx}"
   vars.store(key_fill_var_name_on, japanese_color_config[key_fill_var_name_on])
   vars.store(key_fill_var_name_off, japanese_color_config[key_fill_var_name_off])
@@ -145,10 +92,10 @@ paths.each do | path |
   path_id = path["id"]
 
   # steno letter fills
-  letter_fill = path["fill"]
+  # letter_fill = path["fill"]
   letter_fill_var_name_on = path_id + "OnColor"
   letter_fill_var_name_off = path_id + "OffColor"
-  letter_fill_var_value = letter_fill
+  # letter_fill_var_value = letter_fill
   path["fill"] = "xxx{this.props." + path_id.gsub('Letter','') + " ? " + letter_fill_var_name_on + " : " + letter_fill_var_name_off + "xxx}"
   vars.store(letter_fill_var_name_on, japanese_color_config[letter_fill_var_name_on])
   vars.store(letter_fill_var_name_off, japanese_color_config[letter_fill_var_name_off])
