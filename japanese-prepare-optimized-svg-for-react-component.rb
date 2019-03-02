@@ -33,7 +33,8 @@ JAPANESE_SYMBOLS.each do | key |
 end
 
 # SVG_WIDTH = 160
-SVG_WIDTH = 202
+SVG_WIDTH = 140
+# SVG_WIDTH = 202
 
 
 source_svg_basename = File.basename(SOURCE_SVG)
