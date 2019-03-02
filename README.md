@@ -20,15 +20,17 @@ For an SVG diagram:
 
 - The Sketch Artboard or main `<g>`s `id` must be the layout’s name e.g. `italian-michela`.
 - The Sketch layers or shape `id`s for keys must match the test case’s key names e.g. `leftCapitalX`.
-- Letters created using the monospace type must be converted to outlines.
+- Letters created using the monospace type must be converted to outlines (and then renamed).
+    - Layer names get borked by Sketch when converting to outlines.
 - The Sketch layers or shape `id`s for letters should match the test case’s key names plus "Letter" e.g. `leftCapitalXLetter`.
-- Drag the diagram into [SVGOMG icon optimizer](https://jakearchibald.github.io/svgomg/):
-    - `Prettify markup`
-    - `Remove xmlns`
-    - Do NOT `Clean IDs`
-    - Do NOT `Collapse useless groups`
-    - `Remove <title>`
-    - `Remove <desc>`
+- The following is handled by command line `svgo`:
+    - Drag the diagram into [SVGOMG icon optimizer](https://jakearchibald.github.io/svgomg/):
+        - `Prettify markup`
+        - `Remove xmlns`
+        - Do NOT `Clean IDs`
+        - Do NOT `Collapse useless groups`
+        - `Remove <title>`
+        - `Remove <desc>`
 
 Add to Typey Type:
 
@@ -42,18 +44,23 @@ Add to Typey Type:
 
 # Installation
 
-```
+```sh
 $ gem install nokogiri
 $ yarn add svg-to-jsx
 $ chmod +x ./italian-michela-prepare-optimized-svg-for-react-component.rb
+$ chmod +x ./japanese-prepare-optimized-svg-for-react-component.rb
 ```
 
 
 
 # Usage
 
+```sh
+./italian-michela-prepare-optimized-svg-for-react-component.rb source-svgs/italian-michela.svg target-js/ItalianMichelaStenoDiagram.js
 ```
-$ ./italian-michela-prepare-optimized-svg-for-react-component.rb source-svgs/italian-michela.svg target-js/ItalianMichelaStenoDiagram.js
+
+```sh
+./japanese-prepare-optimized-svg-for-react-component.rb source-svgs/japanese.svg target-js/JapaneseStenoDiagram.js
 ```
 
 
