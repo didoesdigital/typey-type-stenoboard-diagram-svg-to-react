@@ -1,14 +1,16 @@
 # README
 
+This project is has utility scripts to manually convert an SVG steno diagram to React syntax for use in [Typey Type for Stenographers](https://didoesdigital.com/typey-type).
+
 For each new steno layout, 3 things are needed:
 
 - The full steno order for the layout's main theory as it would be used in a dictionary (including dashes, for example).
 - An SVG diagram with sensible on/off colors for keys and letters.
 - A mapping of steno order characters to steno diagram keys.
 
-If [Overpass Mono](https://fonts.google.com/specimen/Overpass+Mono) does not support all the glyphs needed for a language’s characters, then you’ll also need an alternative Google Fonts hosted monospace typeface that supports all the characters needed.
+For designing the diagram itself, if [Overpass Mono](https://fonts.google.com/specimen/Overpass+Mono) does not support all the glyphs needed for a language’s characters, then you’ll also need an alternative Google Fonts hosted monospace typeface that supports all the characters needed.
 
-Tests need to be written that at least cover:
+In Typey Type, tests need to be written that at least cover:
 
 - Numbers
 - Punctuation
@@ -16,7 +18,7 @@ Tests need to be written that at least cover:
 - Distinguishing duplicated letters in the theory’s steno order (e.g. left-hand and right-hand "S")
 - Distinguishing black and white keys for certain theories.
 
-For an SVG diagram:
+For preparing and exporting the SVG diagram from Sketch:
 
 - The Sketch Artboard or main `<g>`s `id` must be the layout’s name e.g. `italian-michela`.
 - The Sketch layers or shape `id`s for keys must match the test case’s key names e.g. `leftCapitalX`.
@@ -32,7 +34,9 @@ For an SVG diagram:
         - `Remove <title>`
         - `Remove <desc>`
 
-Add to Typey Type:
+Use the scripts in this project to convert the exported SVG into React syntax.
+
+To add the finalised diagram to Typey Type:
 
 - Duplicate `src/StenoLayout/DanishStenoDiagram.js`.
 - Copy optimized and react-ified SVG into `src/StenoLayout/NEWDiagram.js`.
@@ -44,9 +48,11 @@ Add to Typey Type:
 
 # Installation
 
+Pre-requisites. You need ruby and node.js before installing:
+
 ```sh
 $ gem install nokogiri
-$ yarn add svg-to-jsx
+$ yarn install
 $ chmod +x ./italian-michela-prepare-optimized-svg-for-react-component.rb
 $ chmod +x ./japanese-prepare-optimized-svg-for-react-component.rb
 ```
@@ -55,9 +61,15 @@ $ chmod +x ./japanese-prepare-optimized-svg-for-react-component.rb
 
 # Usage
 
+Before making changes to diagrams, run the code at least once and check the git diff to make sure the output doesn't change and works as expected. This will catch any issues in build tools like version changes.
+
+For Italian Michela:
+
 ```sh
 ./italian-michela-prepare-optimized-svg-for-react-component.rb source-svgs/italian-michela.svg target-js/ItalianMichelaStenoDiagram.js
 ```
+
+For Japanese:
 
 ```sh
 ./japanese-prepare-optimized-svg-for-react-component.rb source-svgs/japanese.svg target-js/JapaneseStenoDiagram.js
