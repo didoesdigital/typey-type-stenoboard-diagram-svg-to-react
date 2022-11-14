@@ -55,6 +55,7 @@ $ gem install nokogiri
 $ yarn install
 $ chmod +x ./italian-michela-prepare-optimized-svg-for-react-component.rb
 $ chmod +x ./japanese-prepare-optimized-svg-for-react-component.rb
+$ chmod +x ./brazilian-portuguese-prepare-optimized-svg-for-react-component.rb
 ```
 
 
@@ -73,6 +74,12 @@ For Japanese:
 
 ```sh
 ./japanese-prepare-optimized-svg-for-react-component.rb source-svgs/japanese.svg target-js/JapaneseStenoDiagram.js
+```
+
+For Brazilian Portuguese:
+
+```sh
+./brazilian-portuguese-prepare-optimized-svg-for-react-component.rb source-svgs/brazilian-portuguese.svg target-js/BrazilianPortugueseStenoDiagram.js
 ```
 
 
