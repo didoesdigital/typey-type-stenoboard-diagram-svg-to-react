@@ -12,13 +12,12 @@ end
 SOURCE_SVG = ARGV[0]
 TARGET_JS = ARGV[1]
 
+# SKTFPLRAO*-EURWBPGHTSDZ
 BRAZILIAN_PORTUGUESE_KEYS = [
-"the漢", "theLeftKagikakko", "theLeft4", "theLeftた", "theLeftな", "theLeft3", "theLeftか", "theLeftさ", "theLeft2", "theLeftい", "theLeftう", "theLeft1", "theLeftお", "theLeftっ", "theStar", "dash", "theRight4", "theRightた", "theRightな", "theRight3", "theRightか", "theRightさ", "theRight2", "theRightい", "theRightう", "theRight1", "theRightお", "theRightっ", "theRightKagikakko", "theカ"
-]
+  "leftS", "leftK", "leftT", "leftF", "leftP", "leftL", "leftR", "leftA", "leftO", "star", "dash", "rightE", "rightU", "rightR", "rightW", "rightB", "rightP", "rightG", "rightH", "rightT", "rightS", "rightD", "rightZ"]
 
 BRAZILIAN_PORTUGUESE_SYMBOLS = [
-  "the漢Symbol", "theLeftKagikakkoSymbol", "theLeft4Symbol", "theLeftたSymbol", "theLeftなSymbol", "theLeft3Symbol", "theLeftかSymbol", "theLeftさSymbol", "theLeft2Symbol", "theLeftいSymbol", "theLeftうSymbol", "theLeft1Symbol", "theLeftおSymbol", "theLeftっSymbol", "theStarSymbol", "dashSymbol", "theRight4Symbol", "theRightたSymbol", "theRightなSymbol", "theRight3Symbol", "theRightかSymbol", "theRightさSymbol", "theRight2Symbol", "theRightいSymbol", "theRightうSymbol", "theRight1Symbol", "theRightおSymbol", "theRightっSymbol", "theRightKagikakkoSymbol", "theカSymbol"
-]
+  "leftSSymbol", "leftKSymbol", "leftTSymbol", "leftFSymbol", "leftPSymbol", "leftLSymbol", "leftRSymbol", "leftASymbol", "leftOSymbol", "starSymbol", "dashSymbol", "rightESymbol", "rightUSymbol", "rightRSymbol", "rightWSymbol", "rightBSymbol", "rightPSymbol", "rightGSymbol", "rightHSymbol", "rightTSymbol", "rightSSymbol", "rightDSymbol", "rightZSymbol"]
 
 brazilian_portuguese_color_config = {}
 
