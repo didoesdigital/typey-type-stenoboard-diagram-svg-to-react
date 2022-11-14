@@ -14,10 +14,14 @@ TARGET_JS = ARGV[1]
 
 # SKTFPLRAO*-EURWBPGHTSDZ
 BRAZILIAN_PORTUGUESE_KEYS = [
-  "leftS", "leftK", "leftT", "leftF", "leftP", "leftL", "leftR", "leftA", "leftO", "star", "dash", "rightE", "rightU", "rightR", "rightW", "rightB", "rightP", "rightG", "rightH", "rightT", "rightS", "rightD", "rightZ"]
+"leftSKey", "leftKKey", "leftTKey", "leftFKey", "leftPKey", "leftLKey", "leftRKey", "leftAKey", "leftOKey", "starKey",
+# "dashKey",
+"rightEKey", "rightUKey", "rightRKey", "rightWKey", "rightBKey", "rightPKey", "rightGKey", "rightHKey", "rightTKey", "rightSKey", "rightDKey", "rightZKey"]
 
 BRAZILIAN_PORTUGUESE_SYMBOLS = [
-  "leftSSymbol", "leftKSymbol", "leftTSymbol", "leftFSymbol", "leftPSymbol", "leftLSymbol", "leftRSymbol", "leftASymbol", "leftOSymbol", "starSymbol", "dashSymbol", "rightESymbol", "rightUSymbol", "rightRSymbol", "rightWSymbol", "rightBSymbol", "rightPSymbol", "rightGSymbol", "rightHSymbol", "rightTSymbol", "rightSSymbol", "rightDSymbol", "rightZSymbol"]
+  "leftS", "leftK", "leftT", "leftF", "leftP", "leftL", "leftR", "leftA", "leftO", "star",
+  # "dash",
+  "rightE", "rightU", "rightR", "rightW", "rightB", "rightP", "rightG", "rightH", "rightT", "rightS", "rightD", "rightZ"]
 
 brazilian_portuguese_color_config = {}
 
