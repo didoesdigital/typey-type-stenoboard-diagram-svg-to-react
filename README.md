@@ -83,11 +83,14 @@ In this repo:
 
 To add the finalised diagram to Typey Type:
 
-- Duplicate `src/StenoLayout/DanishStenoDiagram.js`.
+- Duplicate `src/StenoLayout/BrazilianPortugueseStenoDiagram.js`.
 - Copy optimized and react-ified SVG into `src/StenoLayout/NEWDiagram.js`.
-- Import new diagram in intended locations (search for `Danish`):
-    - Add map keys to briefs function.
+- Import new diagram in intended locations (search for `BrazilianPortuguese`):
+    - Add map keys to briefs function:
+        - Duplicate `src/utils/stenoLayouts/mapBriefToBrazilianPortugueseStenoKeys.ts` and `src/utils/stenoLayouts/mapBriefToBrazilianPortugueseStenoKeys.test.ts`.
+        - Amend test and logic until they make sense and pass.
     - Add user setting.
+        - Decide on name and order in UI
     - Double-check all imports are from the correct files.
 
 
