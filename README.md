@@ -38,6 +38,18 @@ $ chmod +x ./brazilian-portuguese-prepare-optimized-svg-for-react-component.rb
 
 Before making changes to diagrams, run the code at least once and check the git diff to make sure the output doesn't change and works as expected. This will catch any issues in build tools like version changes.
 
+For hobbyist layouts with no number bar and with outer number keys:
+
+```sh
+./no-number-bar-outer-thumb-numbers-prepare-optimized-svg-for-react-component.rb source-svgs/no-number-bar-outer-thumb-numbers.svg target-js/NoNumberBarOuterThumbNumbersStenoDiagram.js
+```
+
+For Brazilian Portuguese:
+
+```sh
+./brazilian-portuguese-prepare-optimized-svg-for-react-component.rb source-svgs/brazilian-portuguese.svg target-js/BrazilianPortugueseStenoDiagram.js
+```
+
 For Italian Michela:
 
 ```sh
@@ -50,25 +62,24 @@ For Japanese:
 ./japanese-prepare-optimized-svg-for-react-component.rb source-svgs/japanese.svg target-js/JapaneseStenoDiagram.js
 ```
 
-For Brazilian Portuguese:
-
-```sh
-./brazilian-portuguese-prepare-optimized-svg-for-react-component.rb source-svgs/brazilian-portuguese.svg target-js/BrazilianPortugueseStenoDiagram.js
-```
-
 ## Adding new layout diagrams
 
 In Figma:
 
 - Make an "off" vector diagram with proper text as an editable source
 - Name all the layers correctly considering left/right, lower/upper, one/two, star, numberBar, and numbers (and not starting JavaScript variable names with numbers) e.g. `leftTKey` and `leftT` for the key and letter, respectively, `starKey`, `rightDLower`, `numberBar`, `leftCapitalC`, `leftPlusOne`, `rightCaretOne`, `the8Key`
+- Order the layers in *reverse* steno order so they end up in steno order in code
 - Make an "on" version of the diagram just to make sure it looks sensible and legible
 - When ready to export, convert the "off" version's text to outlines and export as SVG
 
 In this repo:
 
 - Add the exported SVG into `source-svgs/*.svg`
+- Check key and letter IDs in exported SVG for any duplicates or mistakes
 - Duplicate the most relevant `*prepare-optimized-svg-for-react-component.rb` script file
+- Copy source SVG IDs into script `KEYS` and `SYMBOLS` constants
+- Update this README and run the script
+- Review final clip path IDs and similar
 
 To add the finalised diagram to Typey Type:
 
