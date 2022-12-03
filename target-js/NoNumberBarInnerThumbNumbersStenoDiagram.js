@@ -128,8 +128,8 @@ const rightZOffColor = '#FFFFFF';
 
 class NoNumberBarInnerThumbNumbersStenoDiagram extends Component {
   render() {
-  const diagramWidth = this.props.diagramWidth || 140;
-  const svgDiagramID = this.props.id || 'stenoDiagram';
+    const diagramWidth = this.props.diagramWidth || 140;
+    const svgDiagramID = this.props.id || 'stenoDiagram';
 
     return (
       <svg id={svgDiagramID} width="140" fill="none" viewBox="0 0 204 100" xmlns="http://www.w3.org/2000/svg" aria-hidden={true}>

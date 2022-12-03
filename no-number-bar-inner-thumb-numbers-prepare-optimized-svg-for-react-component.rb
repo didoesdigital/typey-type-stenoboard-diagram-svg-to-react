@@ -130,8 +130,8 @@ File.open(TARGET_JS, 'w') do |target|
   target.puts
   target.puts "class " + File.basename(TARGET_JS, ".js") + " extends Component {"
   target.puts "  render() {"
-  target.puts "  const diagramWidth = this.props.diagramWidth || 140;"
-  target.puts "  const svgDiagramID = this.props.id || 'stenoDiagram';"
+  target.puts "    const diagramWidth = this.props.diagramWidth || 140;"
+  target.puts "    const svgDiagramID = this.props.id || 'stenoDiagram';"
   target.puts
   target.puts "    return ("
   target.puts svgjs
