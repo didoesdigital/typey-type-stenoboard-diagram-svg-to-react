@@ -107,7 +107,7 @@ svgjs = ""
 jsx.each_line do |raw_line|
   line = raw_line.rstrip
   if line =~ /<svg (.+)>/i
-    line = "<svg " + $1 + " aria-hidden={hidden}>"
+    line = "<svg id={svgDiagramID} " + $1 + " aria-hidden={true}>"
   end
   line = line.gsub(/"xxx{/,"{")
   line = line.gsub(/xxx}"/,"}")
@@ -122,19 +122,18 @@ File.open(TARGET_JS, 'w') do |target|
 
   target.puts "import React, { Component } from 'react';"
   target.puts
-  target.puts "class " + File.basename(TARGET_JS, ".js") + " extends Component {"
-  target.puts "  render() {"
-  target.puts
-  target.puts "    let hidden = true;"
 
   vars.each do |key, value|
-    target.puts "    let " + key + " = '" + value + "';"
+    target.puts "const " + key + " = '" + value + "';"
   end
 
   target.puts
-
+  target.puts "class " + File.basename(TARGET_JS, ".js") + " extends Component {"
+  target.puts "  render() {"
+  target.puts "  const diagramWidth = this.props.diagramWidth || 140;"
+  target.puts "  const svgDiagramID = this.props.id || 'stenoDiagram';"
+  target.puts
   target.puts "    return ("
-
   target.puts svgjs
 
   target.puts "    );"
