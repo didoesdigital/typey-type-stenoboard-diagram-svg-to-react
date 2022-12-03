@@ -89,6 +89,7 @@ To add the finalised diagram to Typey Type:
 
 - Duplicate `src/StenoLayout/BrazilianPortugueseStenoDiagram.js`.
 - Copy optimized and react-ified SVG into `src/StenoLayout/NEWDiagram.js`.
+- Fix hard-coded width to `width={diagramWidth}`
 - Import new diagram in intended locations (search for `BrazilianPortuguese`):
     - Add map keys to briefs function:
         - Duplicate `src/utils/stenoLayouts/mapBriefToBrazilianPortugueseStenoKeys.ts` and `src/utils/stenoLayouts/mapBriefToBrazilianPortugueseStenoKeys.test.ts`.
