@@ -41,6 +41,10 @@ Before making changes to diagrams, run the code at least once and check the git 
 For hobbyist layouts with no number bar and with outer number keys:
 
 ```sh
+./no-number-bar-inner-thumb-numbers-prepare-optimized-svg-for-react-component.rb source-svgs/no-number-bar-inner-thumb-numbers.svg target-js/NoNumberBarInnerThumbNumbersStenoDiagram.js
+```
+
+```sh
 ./no-number-bar-outer-thumb-numbers-prepare-optimized-svg-for-react-component.rb source-svgs/no-number-bar-outer-thumb-numbers.svg target-js/NoNumberBarOuterThumbNumbersStenoDiagram.js
 ```
 
