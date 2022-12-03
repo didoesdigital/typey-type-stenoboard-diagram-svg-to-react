@@ -69,6 +69,7 @@ In Figma:
 - Make an "off" vector diagram with proper text as an editable source
 - Name all the layers correctly considering left/right, lower/upper, one/two, star, numberBar, and numbers (and not starting JavaScript variable names with numbers) e.g. `leftTKey` and `leftT` for the key and letter, respectively, `starKey`, `rightDLower`, `numberBar`, `leftCapitalC`, `leftPlusOne`, `rightCaretOne`, `the8Key`
 - Order the layers in *reverse* steno order so they end up in steno order in code
+- Make sure "Clip content" on the outer frame is turned off
 - Make an "on" version of the diagram just to make sure it looks sensible and legible
 - When ready to export, convert the "off" version's text to outlines and export as SVG
 
@@ -79,7 +80,6 @@ In this repo:
 - Duplicate the most relevant `*prepare-optimized-svg-for-react-component.rb` script file
 - Copy source SVG IDs into script `KEYS` and `SYMBOLS` constants
 - Update this README and run the script
-- Review final clip path IDs and similar
 
 To add the finalised diagram to Typey Type:
 
