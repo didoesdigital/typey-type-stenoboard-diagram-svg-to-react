@@ -18,33 +18,7 @@ In Typey Type, tests need to be written that at least cover:
 - Distinguishing duplicated letters in the theory’s steno order (e.g. left-hand and right-hand "S")
 - Distinguishing black and white keys for certain theories.
 
-For preparing and exporting the SVG diagram from Sketch:
-
-- The Sketch Artboard or main `<g>`s `id` must be the layout’s name e.g. `italian-michela`.
-- The Sketch layers or shape `id`s for keys must match the test case’s key names e.g. `leftCapitalX`.
-- Letters created using the monospace type must be converted to outlines (and then renamed).
-    - Layer names get borked by Sketch when converting to outlines.
-- The Sketch layers or shape `id`s for letters should match the test case’s key names plus "Letter" e.g. `leftCapitalXLetter`.
-- The following is handled by command line `svgo`:
-    - Drag the diagram into [SVGOMG icon optimizer](https://jakearchibald.github.io/svgomg/):
-        - `Prettify markup`
-        - `Remove xmlns`
-        - Do NOT `Clean IDs`
-        - Do NOT `Collapse useless groups`
-        - `Remove <title>`
-        - `Remove <desc>`
-
-Use the scripts in this project to convert the exported SVG into React syntax.
-
-To add the finalised diagram to Typey Type:
-
-- Duplicate `src/StenoLayout/DanishStenoDiagram.js`.
-- Copy optimized and react-ified SVG into `src/StenoLayout/NEWDiagram.js`.
-- Import new diagram in intended locations (search for `Danish`):
-    - Add map keys to briefs function.
-    - Add user setting.
-
-
+Use the scripts in this project to convert exported SVGs into React syntax.
 
 # Installation
 
@@ -82,11 +56,48 @@ For Brazilian Portuguese:
 ./brazilian-portuguese-prepare-optimized-svg-for-react-component.rb source-svgs/brazilian-portuguese.svg target-js/BrazilianPortugueseStenoDiagram.js
 ```
 
+## Adding new layout diagrams
+
+In Figma:
+
+- Make an "off" vector diagram with proper text as an editable source
+- Name all the layers correctly considering left/right, lower/upper, one/two, star, numberBar, and numbers (and not starting JavaScript variable names with numbers) e.g. `leftTKey` and `leftT` for the key and letter, respectively, `starKey`, `rightDLower`, `numberBar`, `leftCapitalC`, `leftPlusOne`, `rightCaretOne`, `the8Key`
+- Make an "on" version of the diagram just to make sure it looks sensible and legible
+- When ready to export, convert the "off" version's text to outlines and export as SVG
+
+In this repo:
+
+- Add the exported SVG into `source-svgs/*.svg`
+- Duplicate the most relevant `*prepare-optimized-svg-for-react-component.rb` script file
+
+To add the finalised diagram to Typey Type:
+
+- Duplicate `src/StenoLayout/DanishStenoDiagram.js`.
+- Copy optimized and react-ified SVG into `src/StenoLayout/NEWDiagram.js`.
+- Import new diagram in intended locations (search for `Danish`):
+    - Add map keys to briefs function.
+    - Add user setting.
+    - Double-check all imports are from the correct files.
 
 
-# TODO
 
-- [ ] abstract Italian to work for any language:
-    - [ ] duplicate script for Korean, make it work for that, see what is in common, then combine
-    - [ ] generalise config to live in a JSON file
+# Archive
+
+Here are the previous steps for Sketch diagrams…
+
+For preparing and exporting the SVG diagram from Sketch:
+
+- The Sketch Artboard or main `<g>`s `id` must be the layout’s name e.g. `italian-michela`.
+- The Sketch layers or shape `id`s for keys must match the test case’s key names e.g. `leftCapitalX`.
+- Letters created using the monospace type must be converted to outlines (and then renamed).
+    - Layer names get borked by Sketch when converting to outlines.
+- The Sketch layers or shape `id`s for letters should match the test case’s key names plus "Letter" e.g. `leftCapitalXLetter`.
+- The following is handled by command line `svgo`:
+    - Drag the diagram into [SVGOMG icon optimizer](https://jakearchibald.github.io/svgomg/):
+        - `Prettify markup`
+        - `Remove xmlns`
+        - Do NOT `Clean IDs`
+        - Do NOT `Collapse useless groups`
+        - `Remove <title>`
+        - `Remove <desc>`
 
