@@ -81,7 +81,7 @@ In Figma:
 
 In this repo:
 
-- Add the exported SVG into `source-svgs/*.svg`
+- Add the exported SVG into `source-svgs/*.svg` and remove white background `rect` if needed
 - Check key and letter IDs in exported SVG for any duplicates or mistakes
 - Duplicate the most relevant `*prepare-optimized-svg-for-react-component.rb` script file
 - Copy source SVG IDs into script `KEYS` and `SYMBOLS` constants
@@ -91,7 +91,8 @@ To add the finalised diagram to Typey Type:
 
 - Duplicate `src/StenoLayout/BrazilianPortugueseStenoDiagram.js`.
 - Copy optimized and react-ified SVG into `src/StenoLayout/NEWDiagram.js`.
-- Fix hard-coded width to `width={diagramWidth}`
+- Fix hard-coded width to `width={diagramWidth}`.
+- Add `className={this.props.classes}` to `svg` element.
 - Import new diagram in intended locations (search for `BrazilianPortuguese`):
     - Add map keys to briefs function:
         - Duplicate `src/utils/stenoLayouts/mapBriefToBrazilianPortugueseStenoKeys.ts` and `src/utils/stenoLayouts/mapBriefToBrazilianPortugueseStenoKeys.test.ts`.
