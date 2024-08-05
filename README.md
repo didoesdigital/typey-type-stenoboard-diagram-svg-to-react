@@ -75,7 +75,9 @@ In Figma:
 - Order the layers in *reverse* steno order so they end up in steno order in code
 - Make sure "Clip content" on the outer frame is turned off
 - Make an "on" version of the diagram just to make sure it looks sensible and legible
-- When ready to export, convert the "off" version's text to outlines and export as SVG
+- When ready to export, convert the "off" version's text to outlines
+- In the Export settings, make sure `Include "id" attribute` is checked in order to `Explort layer names using id`
+- Export the SVG
 
 In this repo:
 
