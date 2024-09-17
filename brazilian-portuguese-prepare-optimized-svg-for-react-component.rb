@@ -51,6 +51,7 @@ end
 
 svg = @doc.at_css "svg"
 svg["width"] = SVG_WIDTH
+svg["viewBox"] = "0 0 215 101"
 
 title = @doc.at_css "title"
 # title_content = title.content
@@ -73,10 +74,7 @@ rects.each do | rect |
 
   # steno key strokes
   stroke = rect["stroke"]
-  stroke_var_name = rect_id + "StrokeColor"
-  stroke_var_value = stroke
-  rect["stroke"] = "xxx{" + stroke_var_name + "xxx}"
-  vars.store(stroke_var_name, stroke_var_value)
+  rect["stroke"] = "xxx{strokeColorxxx}"
 
   # steno key fills
   # key_fill = rect["fill"]
@@ -96,13 +94,7 @@ paths.each do | path |
   path_id = path["id"]
 
   # steno letter fills
-  # letter_fill = path["fill"]
-  letter_fill_var_name_on = path_id + "OnColor"
-  letter_fill_var_name_off = path_id + "OffColor"
-  # letter_fill_var_value = letter_fill
-  path["fill"] = "xxx{this.props." + path_id.gsub('Letter','') + " ? " + letter_fill_var_name_on + " : " + letter_fill_var_name_off + "xxx}"
-  vars.store(letter_fill_var_name_on, brazilian_portuguese_color_config[letter_fill_var_name_on])
-  vars.store(letter_fill_var_name_off, brazilian_portuguese_color_config[letter_fill_var_name_off])
+  path["fill"] = "xxx{this.props." + path_id.gsub('Letter','') + " ? onTextColor : offTextColorxxx}"
 end
 
 File.open(TARGET_JS, 'w') do |target|
@@ -116,7 +108,7 @@ svgjs = ""
 jsx.each_line do |raw_line|
   line = raw_line.rstrip
   if line =~ /<svg (.+)>/i
-    line = "<svg " + $1 + " aria-hidden={hidden}>"
+    line = "<svg " + $1 + " aria-hidden={true}>"
   end
   line = line.gsub(/"xxx{/,"{")
   line = line.gsub(/xxx}"/,"}")
@@ -126,21 +118,27 @@ jsx.each_line do |raw_line|
   svgjs += line + "\n"
 end
 
+stroke_color_value = "#7109AA"
+stroke_color = "const strokeColor = \"#{stroke_color_value}\";"
 
 File.open(TARGET_JS, 'w') do |target|
 
   target.puts "import React, { Component } from 'react';"
   target.puts
-  target.puts "class " + File.basename(TARGET_JS, ".js") + " extends Component {"
-  target.puts "  render() {"
+  target.puts 'const strokeColor = "#7109AA";'
+  target.puts 'const onTextColor = "#fff";'
+  target.puts 'const offTextColor = "#fff";'
+
   target.puts
-  target.puts "    let hidden = true;"
 
   vars.each do |key, value|
-    target.puts "    let " + key + " = '" + value + "';"
+    target.puts "const " + key + " = '" + value + "';"
   end
 
   target.puts
+
+  target.puts "class " + File.basename(TARGET_JS, ".js") + " extends Component {"
+  target.puts "  render() {"
 
   target.puts "    return ("
 
