@@ -22,14 +22,26 @@ Use the scripts in this project to convert exported SVGs into React syntax.
 
 # Installation
 
-Pre-requisites. You need ruby and node.js before installing:
+Pre-requisites.
+
+You need ruby to install the Ruby dependencies, including `nokogiri`:
 
 ```sh
-$ gem install nokogiri
-$ yarn install
-$ chmod +x ./italian-michela-prepare-optimized-svg-for-react-component.rb
-$ chmod +x ./japanese-prepare-optimized-svg-for-react-component.rb
-$ chmod +x ./brazilian-portuguese-prepare-optimized-svg-for-react-component.rb
+bundle install
+```
+
+You need node.js to install the JavaScript dependencies:
+
+```sh
+yarn install
+```
+
+Before using any of the Ruby scripts, change the file modes to make the scripts executable, for example:
+
+```
+chmod +x ./italian-michela-prepare-optimized-svg-for-react-component.rb
+chmod +x ./japanese-prepare-optimized-svg-for-react-component.rb
+chmod +x ./brazilian-portuguese-prepare-optimized-svg-for-react-component.rb
 ```
 
 
