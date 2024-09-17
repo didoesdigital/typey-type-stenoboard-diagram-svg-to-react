@@ -40,7 +40,7 @@ SVG_WIDTH = 140
 source_svg_basename = File.basename(SOURCE_SVG)
 OPTIMIZED_SVG = "./optimized-svgs/#{source_svg_basename}"
 
-if !system "node_modules/.bin/svgo --pretty --config=.svgo.yml -o #{OPTIMIZED_SVG} #{SOURCE_SVG} > /dev/null"
+if !system "node_modules/.bin/svgo --pretty --config=svgo.config.mjs -i #{SOURCE_SVG} -o #{OPTIMIZED_SVG} > /dev/null"
   exit 1
 end
 
