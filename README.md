@@ -78,6 +78,12 @@ For Japanese:
 ./japanese-prepare-optimized-svg-for-react-component.rb source-svgs/japanese.svg target-js/JapaneseStenoDiagram.js
 ```
 
+For Yawei Chinese steno:
+
+```sh
+./yawei-chinese-prepare-optimized-svg-for-react-component.rb source-svgs/yawei-chinese.svg target-js/YaweiChineseStenoDiagram.js
+```
+
 ## Adding new layout diagrams
 
 In Figma:
