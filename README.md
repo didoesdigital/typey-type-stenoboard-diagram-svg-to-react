@@ -8,7 +8,7 @@ For each new steno layout, 3 things are needed:
 - An SVG diagram with sensible on/off colors for keys and letters.
 - A mapping of steno order characters to steno diagram keys.
 
-For designing the diagram itself, if [Overpass Mono](https://fonts.google.com/specimen/Overpass+Mono) does not support all the glyphs needed for a language’s characters, then you’ll also need an alternative Google Fonts hosted monospace typeface that supports all the characters needed.
+For designing the diagram itself, if [Overpass Mono](https://fonts.google.com/specimen/Overpass+Mono) does not support all the glyphs needed for a language’s characters, then you’ll also need an alternative Google Fonts hosted monospace typeface that supports all the characters needed. For example, the Korean Modern C layout uses the `NanumGothicCoding` font.
 
 In Typey Type, tests need to be written that at least cover:
 
@@ -86,24 +86,38 @@ For Yawei Chinese steno:
 
 ## Adding new layout diagrams
 
+> [!NOTE]
+> In SVG, text can be represented in 2 ways:
+>
+> 1. As "Text": Using `<text>` elements with an attribute to set the font family like `font-family="Overpass Mono"`. In design tools, you can edit this text by typing regular letters.
+> 2. As "Outlines": Using `<path>` elements that define the text outline. In design tools, you cannot edit this text by typing letters and can instead only edit the paths.
+>
+> You can use design tools to convert text to outlines. The tool to convert it can sometimes be called "text to outline" or "object to path".
+
+To get started with creating a new stenoboard diagram, it might be easier to copy and paste an existing diagram's original design file with text and then make changes. There are some examples to work with in `design-files/stenoboards-with-text-not-path-outlines/`.
+
 In Figma:
 
-- Make an "off" vector diagram with proper text as an editable source
+- Make sure you have the [Overpass Mono](https://fonts.google.com/specimen/Overpass+Mono) font installed on your machine
+- Copy an existing diagram with the keys "off" from `design-files/stenoboards-with-text-not-path-outlines/`
+- Design the stenoboard "off" diagram with text using the Overpass Mono font
 - Name all the layers correctly considering left/right, lower/upper, one/two, star, numberBar, and numbers (and not starting JavaScript variable names with numbers) e.g. `leftTKey` and `leftT` for the key and letter, respectively, `starKey`, `rightDLower`, `numberBar`, `leftCapitalC`, `leftPlusOne`, `rightCaretOne`, `the8Key`
-- Order the layers in *reverse* steno order so they end up in steno order in code
+- Order the layers in *reverse* steno order in Figma so they end up in steno order in code
 - Make sure "Clip content" on the outer frame is turned off
-- Make an "on" version of the diagram just to make sure it looks sensible and legible
-- When ready to export, convert the "off" version's text to outlines
-- In the Export settings, make sure `Include "id" attribute` is checked in order to `Explort layer names using id`
-- Export the SVG
+- Optional: Make an "on" version of the diagram with text just to make sure it looks sensible and legible
+- Optional: Export the "off" and "on" diagrams with "Outline Text" turned off in the Export settings to `design-files/stenoboards-with-text-not-path-outlines/`
+- When the diagram is complete, copy the "off" version and convert text to outlines
+- In the Export settings, make sure `Include "id" attribute` is checked in order to `Export layer names using id`
+- Export the SVG with outlines
 
 In this repo:
 
-- Add the exported SVG into `source-svgs/*.svg` and remove white background `rect` if needed
+- Add the exported SVG with outlines into `source-svgs/*.svg` and remove white background `rect` if needed
 - Check key and letter IDs in exported SVG for any duplicates or mistakes
 - Duplicate the most relevant `*prepare-optimized-svg-for-react-component.rb` script file
 - Copy source SVG IDs into script `KEYS` and `SYMBOLS` constants
-- Update this README and run the script
+- Update this README
+- Run the script
 
 To add the finalised diagram to Typey Type:
 

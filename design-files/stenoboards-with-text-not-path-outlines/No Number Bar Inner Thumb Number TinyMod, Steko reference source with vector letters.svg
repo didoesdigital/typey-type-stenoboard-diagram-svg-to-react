@@ -1,0 +1,54 @@
+<svg width="204" height="100" viewBox="0 0 204 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="No Number Bar Inner Thumb Number TinyMod, Steko reference source with vector letters">
+<rect id="numberBarKey" x="83.5" y="63.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="leftSUpperKey" x="3.5" y="13.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="leftSLowerKey" x="3.5" y="37.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="leftTKey" x="23.5" y="13.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="leftKKey" x="23.5" y="37.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="leftPKey" x="43.5" y="13.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="leftWKey" x="43.5" y="37.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="leftHKey" x="63.5" y="13.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="leftRKey" x="63.5" y="37.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="leftAKey" x="43.5" y="63.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="leftOKey" x="63.5" y="63.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="starUpperKey" x="83.5" y="13.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="starLowerKey" x="83.5" y="37.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="rightEKey" x="103.5" y="63.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="rightUKey" x="123.5" y="63.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="rightFKey" x="103.5" y="13.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="rightRKey" x="103.5" y="37.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="rightPKey" x="123.5" y="13.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="rightBKey" x="123.5" y="37.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="rightLKey" x="143.5" y="13.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="rightGKey" x="143.5" y="37.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="rightTKey" x="163.5" y="13.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="rightSKey" x="163.5" y="37.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="rightDKey" x="183.5" y="13.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<rect id="rightZKey" x="183.5" y="37.5" width="17" height="19" rx="3.5" fill="#E9D9F2" stroke="#7109AA"/>
+<text id="numberBar" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="87" y="78.084">#</tspan></text>
+<text id="leftSUpper" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="7" y="28.084">S</tspan></text>
+<text id="leftSLower" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="7" y="52.084">S</tspan></text>
+<text id="leftT" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="27" y="28.084">T</tspan></text>
+<text id="leftK" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="27" y="52.084">K</tspan></text>
+<text id="leftP" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="47" y="28.084">P</tspan></text>
+<text id="leftW" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="47" y="52.084">W</tspan></text>
+<text id="leftH" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="67" y="28.084">H</tspan></text>
+<text id="leftR" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="67" y="52.084">R</tspan></text>
+<text id="leftA" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="47" y="78.084">A</tspan></text>
+<text id="leftO" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="67" y="78.084">O</tspan></text>
+<text id="starUpper" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="87" y="28.084">*</tspan></text>
+<text id="starLower" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="87" y="52.084">*</tspan></text>
+<text id="rightE" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="107" y="78.084">E</tspan></text>
+<text id="rightU" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="127" y="78.084">U</tspan></text>
+<text id="rightF" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="107" y="28.084">F</tspan></text>
+<text id="rightR" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="107" y="52.084">R</tspan></text>
+<text id="rightP" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="127" y="28.084">P</tspan></text>
+<text id="rightB" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="127" y="52.084">B</tspan></text>
+<text id="rightL" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="147" y="28.084">L</tspan></text>
+<text id="rightG" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="147" y="52.084">G</tspan></text>
+<text id="rightT" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="167" y="28.084">T</tspan></text>
+<text id="rightS" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="167" y="52.084">S</tspan></text>
+<text id="rightD" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="187" y="28.084">D</tspan></text>
+<text id="rightZ" fill="white" xml:space="preserve" style="white-space: pre" font-family="Overpass Mono" font-size="16" font-weight="600" letter-spacing="0em"><tspan x="187" y="52.084">Z</tspan></text>
+</g>
+</svg>
