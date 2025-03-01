@@ -43,6 +43,9 @@ end
 
 svg = @doc.at_css "svg"
 svg["width"] = SVG_WIDTH
+svg.remove_attribute("id")
+svg.remove_attribute("version")
+svg.remove_attribute("space")
 
 title = @doc.at_css "title"
 # title_content = title.content
@@ -86,6 +89,7 @@ paths = @doc.css "path"
 paths.each do | path |
   path_id = path["id"]
 
+  path.remove_attribute("style")
   # steno letter fills
   # letter_fill = path["fill"]
   letter_fill_var_name_on = path_id + "OnColor"

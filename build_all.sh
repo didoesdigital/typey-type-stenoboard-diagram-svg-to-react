@@ -1,4 +1,4 @@
-#! /usr/bin/bash
+#!/usr/bin/env bash
 
 echo building diagrams:
 echo Brazilian Portugese
@@ -17,7 +17,7 @@ echo Outer Thumbers
 ruby ./no-number-bar-outer-thumb-numbers-prepare-optimized-svg-for-react-component.rb source-svgs/no-number-bar-outer-thumb-numbers.svg target-js/NoNumberBarOuterThumbNumbersStenoDiagram.js
 
 echo Yawei Chinese
-ruby ./yawei-chinese-prepare-optimized-svg-for-react-component.rb source-svgs/yawei-chinese.svg target-js/YaweiChineseStenoDiagram.jsruby lapwing-prepare-optimized-svg-for-react-component.rb source-svgs/lapwing.svg target-js/LapwingDiagram.js
+ruby ./yawei-chinese-prepare-optimized-svg-for-react-component.rb source-svgs/yawei-chinese.svg target-js/YaweiChineseStenoDiagram.js
 
 echo Lapwing
-ruby lapwing-prepare-optimized-svg-for-react-component.rb source-svgs/lapwing.svg target-js/LapwingDiagram.js
+ruby lapwing-prepare-optimized-svg-for-react-component.rb source-svgs/lapwing.svg target-js/LapwingStenoDiagram.js
