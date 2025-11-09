@@ -53,35 +53,35 @@ Before making changes to diagrams, run the code at least once and check the git 
 For hobbyist layouts with no number bar and with outer number keys:
 
 ```sh
-./no-number-bar-inner-thumb-numbers-prepare-optimized-svg-for-react-component.rb source-svgs/no-number-bar-inner-thumb-numbers.svg target-js/NoNumberBarInnerThumbNumbersStenoDiagram.js
+./no-number-bar-inner-thumb-numbers-prepare-optimized-svg-for-react-component.rb source-svgs/no-number-bar-inner-thumb-numbers.svg target-js/NoNumberBarInnerThumbNumbersStenoDiagram.jsx
 ```
 
 ```sh
-./no-number-bar-outer-thumb-numbers-prepare-optimized-svg-for-react-component.rb source-svgs/no-number-bar-outer-thumb-numbers.svg target-js/NoNumberBarOuterThumbNumbersStenoDiagram.js
+./no-number-bar-outer-thumb-numbers-prepare-optimized-svg-for-react-component.rb source-svgs/no-number-bar-outer-thumb-numbers.svg target-js/NoNumberBarOuterThumbNumbersStenoDiagram.jsx
 ```
 
 For Brazilian Portuguese:
 
 ```sh
-./brazilian-portuguese-prepare-optimized-svg-for-react-component.rb source-svgs/brazilian-portuguese.svg target-js/BrazilianPortugueseStenoDiagram.js
+./brazilian-portuguese-prepare-optimized-svg-for-react-component.rb source-svgs/brazilian-portuguese.svg target-js/BrazilianPortugueseStenoDiagram.jsx
 ```
 
 For Italian Michela:
 
 ```sh
-./italian-michela-prepare-optimized-svg-for-react-component.rb source-svgs/italian-michela.svg target-js/ItalianMichelaStenoDiagram.js
+./italian-michela-prepare-optimized-svg-for-react-component.rb source-svgs/italian-michela.svg target-js/ItalianMichelaStenoDiagram.jsx
 ```
 
 For Japanese:
 
 ```sh
-./japanese-prepare-optimized-svg-for-react-component.rb source-svgs/japanese.svg target-js/JapaneseStenoDiagram.js
+./japanese-prepare-optimized-svg-for-react-component.rb source-svgs/japanese.svg target-js/JapaneseStenoDiagram.jsx
 ```
 
 For Yawei Chinese steno:
 
 ```sh
-./yawei-chinese-prepare-optimized-svg-for-react-component.rb source-svgs/yawei-chinese.svg target-js/YaweiChineseStenoDiagram.js
+./yawei-chinese-prepare-optimized-svg-for-react-component.rb source-svgs/yawei-chinese.svg target-js/YaweiChineseStenoDiagram.jsx
 ```
 
 ## Adding new layout diagrams
@@ -121,8 +121,8 @@ In this repo:
 
 To add the finalised diagram to Typey Type:
 
-- Duplicate `src/StenoLayout/BrazilianPortugueseStenoDiagram.js`.
-- Copy optimized and react-ified SVG into `src/StenoLayout/NEWDiagram.js`.
+- Duplicate `src/StenoLayout/BrazilianPortugueseStenoDiagram.jsx`.
+- Copy optimized and react-ified SVG into `src/StenoLayout/NEWDiagram.jsx`.
 - Fix hard-coded width to `width={diagramWidth}`.
 - Add `className={this.props.classes}` to `svg` element.
 - Import new diagram in intended locations (search for `BrazilianPortuguese`):

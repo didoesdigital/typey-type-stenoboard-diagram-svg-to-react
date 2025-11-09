@@ -5,7 +5,7 @@ require 'fileutils'
 require 'nokogiri'
 
 if ARGV.size < 2
-  $stderr.puts "Usage: ruby ./japanese-prepare-optimized-svg-for-react-component.rb STENO_LAYOUT.svg STENOLAYOUTStenoDiagram.js"
+  $stderr.puts "Usage: ruby ./japanese-prepare-optimized-svg-for-react-component.rb STENO_LAYOUT.svg STENOLAYOUTStenoDiagram.jsx"
   exit 1
 end
 
@@ -128,7 +128,7 @@ File.open(TARGET_JS, 'w') do |target|
 
   target.puts "import React, { Component } from 'react';"
   target.puts
-  target.puts "class " + File.basename(TARGET_JS, ".js") + " extends Component {"
+  target.puts "class " + File.basename(TARGET_JS, ".jsx") + " extends Component {"
   target.puts "  render() {"
   target.puts
   target.puts "    let hidden = true;"
@@ -147,7 +147,7 @@ File.open(TARGET_JS, 'w') do |target|
   target.puts "  }"
   target.puts "}"
   target.puts
-  target.puts "export default " + File.basename(TARGET_JS, ".js") + ";"
+  target.puts "export default " + File.basename(TARGET_JS, ".jsx") + ";"
 
 end
 
